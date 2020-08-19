@@ -3,7 +3,7 @@ revisionHistoryLimit: 3
 image:
   repository: jaykmutt/detail-service
   pullPolicy: IfNotPresent
-imagePullSecrets: 
+imagePullSecrets:
   - name: regcred
 nameOverride: "detail-service"
 fullnameOverride: "detail-service"
