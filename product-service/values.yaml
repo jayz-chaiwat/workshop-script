@@ -1,0 +1,37 @@
+replicaCount: 1
+revisionHistoryLimit: 3
+image:
+  repository: jaykmutt/product-service
+  pullPolicy: IfNotPresent
+imagePullSecrets: []
+nameOverride: "product-service"
+fullnameOverride: "product-service"
+serviceAccount:
+  create: true
+  annotations: {}
+  name: "product-service"
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+service:
+  type: ClusterIP
+  port: 8080
+active:
+  env: lockube
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+resources: {}
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+nodeSelector: {}
+tolerations: []
+affinity: {}
